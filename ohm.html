@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            div {
+                border: 1px solid black;
+                width: 350px;
+                height: 350px;
+                background-color: aquamarine;
+                box-shadow: 0 2px 4px 0 black;
+                padding: 1px
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Calcolatore di resistenza e di energia dissipata</h1>
+        <div>
+            <p>Differenza di potenziale: 4.5 V</p>
+            <p>Corrente elettrica: 0.10 A</p>
+            <button onclick="calcR()">Calcola resistenza</button>
+            <p>Resistenza:<p id="output"></p>
+            <p>Intervallo di tempo: 1h</p>
+            <button onclick="calcED()">Calcola energia dissipata in un'ora</button>
+            <p>Energia dissipata:<p id="output2"></p>
+            <script>
+                function calcR() {
+                    let V=4.5;
+                    let I=0.1
+                    let R=V/I
+                    document.getElementById("output").innerHTML=R
+                }
+                function calcED() {
+                    let IT=3600
+                    let R=4.5/0.1
+                    let I=0.1*0.1
+                    let ED=R*I*IT
+                    document.getElementById("output2").innerHTML=ED
+                }
+            </script>
+        </div>
+    </body>
+</html>
